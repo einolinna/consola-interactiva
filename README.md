@@ -1,13 +1,16 @@
 # consola-interactiva
 Consola Interactiva en NodeJS
 
-###############DEPENDENCIAS#################
+-------Dependencias------
 
 ####Colors####
+
 npm i colors
 
 ####Inquierer####
+
 npm i inquierer
 
 ####UUID####
+
 npm i uuid
