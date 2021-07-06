@@ -1,4 +1,5 @@
 require("colors");
+const inquirer = require('inquirer');
 
 const mostrarMenu = () => {
   return new Promise((resolve) => {
@@ -43,5 +44,5 @@ const pausa = () => {
 
 module.exports = {
   mostrarMenu,
-  pausa,
+  pausa
 };

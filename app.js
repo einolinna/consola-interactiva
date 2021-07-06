@@ -1,5 +1,5 @@
 require("colors");
-const { mostrarMenu, pausa } = require("./helpers/mensajes");
+const { inquirerMenu, pausa } = require("./helpers/inquirer");
 
 console.clear();
 
@@ -10,9 +10,10 @@ const main = async () => {
   //ITERO QUE MUESTRE EL MENU HASTA QUE SEA 0
   do {
 
-    opt = await mostrarMenu();
-    //CONDICION PARA TERMINAR PROGRAMA
-    if (opt !== "0") await pausa();
+    opt = await inquirerMenu();
+    console.log(opt);
+    
+    await pausa();
   } while (opt !== "0");
 };
 
