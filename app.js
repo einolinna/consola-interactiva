@@ -1,6 +1,6 @@
 require("colors");
 const { guardarDB, leerDB } = require("./helpers/guardarArchivo");
-const { inquirerMenu, pausa, leerImput } = require("./helpers/inquirer");
+const { inquirerMenu, pausa,confirmar, leerImput,listadoTareasPorBorrar } = require("./helpers/inquirer");
 const Tareas = require("./models/tareas");
 
 console.clear();
@@ -40,7 +40,12 @@ const main = async () => {
 
         break;
       case "6":
-        //crear opcion en
+        const id = await listadoTareasPorBorrar(tareas.listadoArr);
+        const ok = await confirmar(`Esta seguro?` );
+        if(ok ==true){
+          tareas.borrarTarea(id);
+        }else {await inquirerMenu();}
+        
 
         break;
       case "0":
