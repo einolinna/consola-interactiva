@@ -14,14 +14,11 @@ class Tareas {
   constructor() {
     this._listado = {};
   }
-  borrarTarea(id = '') {
-
-    if(this._listado[id]){
-    delete this._listado[id];
- 
+  borrarTarea(id = "") {
+    if (this._listado[id]) {
+      delete this._listado[id];
     }
   }
-
 
   crearTarea(desc = "") {
     const tarea = new Tarea(desc);
@@ -38,8 +35,8 @@ class Tareas {
     this.listadoArr.forEach((tarea, i) => {
       console.log();
       const idx = `${i + 1}`.green;
-      const { desc, compleadoEn } = tarea;
-      const estado = compleadoEn ? "Completada".green : "Pendiente".red;
+      const { desc, completadoEn } = tarea;
+      const estado = completadoEn ? "Completada".green : "Pendiente".red;
       console.log(`${idx} ${desc} :: ${estado}`);
     });
   }
@@ -48,19 +45,37 @@ class Tareas {
     this.listadoArr.forEach((tarea) => {
       let contador = 0;
       console.log();
-      const { desc, compleadoEn } = tarea;
-      const estado = compleadoEn ? "Completada".green : "Pendiente".red;
+      const { desc, completadoEn } = tarea;
+      const estado = completadoEn ? "Completada".green : "Pendiente".red;
 
       if (completada) {
-        if (compleadoEn) {
+        if (completadoEn) {
           contador += 1;
-          console.log(`${(contador +'.').green } ${desc} :: ${estado}`);
+          console.log(
+            `${(contador + ".").green} ${desc} :: ${completadoEn.green} `
+          );
         }
       } else {
-        if (!compleadoEn) {
+        if (!completadoEn) {
           contador += 1;
-          console.log(`${(contador +'.').green}. ${desc} :: ${estado}`);
+          console.log(`${(contador + ".").green}. ${desc} :: ${estado}`);
         }
+      }
+    });
+  }
+
+  toogleCompletadas(ids = []) {
+    ids.forEach((id) => {
+      const tarea = this._listado[id];
+
+      if (!tarea.completadoEn) {
+        tarea.completadoEn = new Date().toISOString();
+      }
+    });
+
+    this.listadoArr.forEach((tarea) => {
+      if (!ids.includes(tarea.id)) {
+        this._listado[tarea.id].completadoEn = null;
       }
     });
   }

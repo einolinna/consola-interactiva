@@ -1,12 +1,1 @@
-[
-    {
-        "id": "e021f161-ef5e-4238-9492-432a438f05e2",
-        "desc": "Alma",
-        "compleadoEn": null
-    },
-    {
-        "id": "5df3f157-bda6-4954-879e-a8684509c8fb",
-        "desc": "Infinidad",
-        "compleadoEn": null
-    }
-]
+[{"id":"80798dc5-dadb-4734-94ea-6a3a0ae8acc1","desc":"Curso NodeJs","compleadoEn":null,"completadoEn":"2021-07-08T00:28:11.681Z"},{"id":"2275b2f1-7b6e-4adb-8995-e56083b88fc9","desc":"Ingles a las 22:hs","compleadoEn":null,"completadoEn":null},{"id":"bd7e68de-9ae1-42ff-9ef3-17c3a23af567","desc":"Break time 5 min","compleadoEn":null,"completadoEn":null},{"id":"8fb1610a-d0a2-4bc4-9fde-ce017c0a8082","desc":"asd","compleadoEn":null,"completadoEn":null}]
